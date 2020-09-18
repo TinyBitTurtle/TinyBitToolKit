@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
-using TinyBitTurtle.Toolkit;
-
-public class CameraShakeCtrl : SingletonMonoBehaviour<CameraShakeCtrl>
+public class CameraShakeCtrl : TinyBitTurtle.Toolkit.SingletonMonoBehaviour<CameraShakeCtrl>
 {
     public float duration;
     public float amplitude;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TinyBitTurtle.Toolkit
+namespace TinyBitTurtle.Core
 {
     public class JsonHelper
     {
