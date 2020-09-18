@@ -1,45 +1,49 @@
 ﻿using System.Collections;
 using UnityEngine;
-public class CameraShakeCtrl : TinyBitTurtle.Toolkit.SingletonMonoBehaviour<CameraShakeCtrl>
+
+namespace TinyBitTurtle.Toolkit
 {
-    public float duration;
-    public float amplitude;
-
-    private float timer = 0;
-    private Vector3 shake = new Vector3();
-
-    public void StartShake()
+    public class CameraShakeCtrl : SingletonMonoBehaviour<CameraShakeCtrl>
     {
-        timer = duration;
+        public float duration;
+        public float amplitude;
 
-        // add sound
-    }
-    // Use this for initialization
-    private void Start()
-    {
-        shake.z = gameObject.transform.position.z;
-        StartCoroutine("Shake");
-    }
+        private float timer = 0;
+        private Vector3 shake = new Vector3();
 
-    // Update is called once per frame
-    IEnumerator Shake()
-    {
-        while (true)
+        public void StartShake()
         {
-            if (timer > 0)
+            timer = duration;
+
+            // add sound
+        }
+        // Use this for initialization
+        private void Start()
+        {
+            shake.z = gameObject.transform.position.z;
+            StartCoroutine("Shake");
+        }
+
+        // Update is called once per frame
+        IEnumerator Shake()
+        {
+            while (true)
             {
-                float normalizedAmplitude = amplitude * (timer / duration);
-                shake.x = Random.Range(-normalizedAmplitude, normalizedAmplitude);
-                shake.y = Random.Range(-normalizedAmplitude, normalizedAmplitude);
+                if (timer > 0)
+                {
+                    float normalizedAmplitude = amplitude * (timer / duration);
+                    shake.x = Random.Range(-normalizedAmplitude, normalizedAmplitude);
+                    shake.y = Random.Range(-normalizedAmplitude, normalizedAmplitude);
 
-                gameObject.transform.position = shake;
+                    gameObject.transform.position = shake;
 
-                timer -= Time.deltaTime;
-                if (timer < 0.0f)
-                    timer = 0.0f;
+                    timer -= Time.deltaTime;
+                    if (timer < 0.0f)
+                        timer = 0.0f;
+                }
+
+                yield return null;
             }
-
-            yield return null;
         }
     }
 }
