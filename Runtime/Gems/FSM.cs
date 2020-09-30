@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public partial class FSM : MonoBehaviour
+public class FSM : MonoBehaviour
 {
     protected Animator animator;
 
@@ -11,6 +11,4 @@ public partial class FSM : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
-    
 }

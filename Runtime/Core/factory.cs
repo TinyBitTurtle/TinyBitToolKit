@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TinyBitTurtle.Core
+namespace TinyBitTurtle.Toolkit
 {
     public class patternFactory : MonoBehaviour
     {

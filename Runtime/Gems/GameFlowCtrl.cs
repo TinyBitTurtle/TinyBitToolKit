@@ -1,8 +1,8 @@
 ﻿namespace TinyBitTurtle
 {
-    public partial class GameFlowCtrl : FSM
+    public class GameFlowCtrl : FSM
     {
-        // register the transition delegate
+        // register the Screen change event
         void OnEnable()
         {
             TransitionCtrl.OnMidFade += UISwitchPanel;
